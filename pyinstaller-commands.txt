@@ -1,0 +1,2 @@
+pyinstaller -F --paths=C:\Users\philm\Anaconda3\Lib\site-packages\keyboard\__init__.py --paths=C:\Users\philm\Anaconda3\Lib\site-packages\pyautogui\__init__.py instalocker.py
+pyinstaller -F setup.py
