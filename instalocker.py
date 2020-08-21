@@ -22,7 +22,7 @@ def wait_for_keyboard_press():
 
 def read_config():
     config = configparser.ConfigParser()
-    configfilepath = 'C:\\config.ini'
+    configfilepath = 'config.ini'
     config.read(configfilepath)
     for i in range(12):
         character[str(i)] = config.get('main', str(i + 1))
@@ -61,6 +61,7 @@ def read_config():
 def choose_0():
     wait_for_keyboard_press()
     pyautogui.click(454, 960)
+    time.sleep(0.2)
     lock_character()
     print("Character chosen!")
 
@@ -68,6 +69,7 @@ def choose_0():
 def choose_1():
     wait_for_keyboard_press()
     pyautogui.click(540, 960)
+    time.sleep(0.2)
     lock_character()
     print("Character chosen!")
 
@@ -75,6 +77,7 @@ def choose_1():
 def choose_2():
     wait_for_keyboard_press()
     pyautogui.click(628, 960)
+    time.sleep(0.2)
     lock_character()
     print("Character chosen!")
 
@@ -82,6 +85,7 @@ def choose_2():
 def choose_3():
     wait_for_keyboard_press()
     pyautogui.click(720, 960)
+    time.sleep(0.2)
     lock_character()
     print("Character chosen!")
 
@@ -89,6 +93,7 @@ def choose_3():
 def choose_4():
     wait_for_keyboard_press()
     pyautogui.click(813, 960)
+    time.sleep(0.2)
     lock_character()
     print("Character chosen!")
 
@@ -96,6 +101,7 @@ def choose_4():
 def choose_5():
     wait_for_keyboard_press()
     pyautogui.click(921, 960)
+    time.sleep(0.2)
     lock_character()
     print("Character chosen!")
 
@@ -103,6 +109,7 @@ def choose_5():
 def choose_6():
     wait_for_keyboard_press()
     pyautogui.click(998, 960)
+    time.sleep(0.2)
     lock_character()
     print("Character chosen!")
 
@@ -110,6 +117,7 @@ def choose_6():
 def choose_7():
     wait_for_keyboard_press()
     pyautogui.click(1099, 960)
+    time.sleep(0.2)
     lock_character()
     print("Character chosen!")
 
@@ -117,6 +125,7 @@ def choose_7():
 def choose_8():
     wait_for_keyboard_press()
     pyautogui.click(1200, 960)
+    time.sleep(0.2)
     lock_character()
     print("Character chosen!")
 
@@ -124,6 +133,7 @@ def choose_8():
 def choose_9():
     wait_for_keyboard_press()
     pyautogui.click(1281, 960)
+    time.sleep(0.2)
     lock_character()
     print("Character chosen!")
 
@@ -131,6 +141,7 @@ def choose_9():
 def choose_10():
     wait_for_keyboard_press()
     pyautogui.click(1373, 960)
+    time.sleep(0.2)
     lock_character()
     print("Character chosen!")
 
@@ -138,15 +149,17 @@ def choose_10():
 def choose_11():
     wait_for_keyboard_press()
     pyautogui.click(1460, 960)
+    time.sleep(0.2)
     lock_character()
     print("Character chosen!")
 
 
 def insta_lock_character(character):
-    for i in character:
-        print(i + "=" + character[i])
+    config = configparser.ConfigParser()
+    configfilepath = 'config.ini'
+    config.read(configfilepath)
 
-    characterstr = input("Which character do you want to insta-lock?[number]")
+    characterstr = config.get('agent', 'selected')
 
     if characterstr == "0":
         choose_0()

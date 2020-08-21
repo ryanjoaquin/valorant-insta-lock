@@ -56,7 +56,7 @@ config['main'] = {'1': order1,
                         '11': order11,
                         '12': order12}
 
-configfile = open('C:\\config.ini', 'w')
+configfile = open('config.ini', 'w')
 config.write(configfile)
 
 exit()
